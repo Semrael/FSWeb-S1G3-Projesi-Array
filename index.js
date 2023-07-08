@@ -66,13 +66,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 function dizi25Cesitmi(saydir) {
-  if (orijinalTatlar.length === 25) {
+  if (saydir.length === 25) {
     return true;
   } else {
     return false;
   }
   /*kod buraya*/
 }
+
 console.log(dizi25Cesitmi(orijinalTatlar));
 console.log("------------------------------");
 
@@ -165,6 +166,7 @@ function ismeGoreCesitCikar(tatlar, silinecekUrun) {
 const cesitCikarıldı = ismeGoreCesitCikar(orijinalTatlar, "Tarçın");
 console.log(cesitCikarıldı);
 
+console.log("------------------------------");
 /* Görev 7:
 
 14 Şubat Sevgililer Günü'nde Firma, tüm çikolata lezzetlerini öne çıkaran bir promosyon malzemeleri oluşturmak istiyor.
@@ -185,9 +187,17 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
   Bu sorunu çözmek için GELİŞMİŞ DİZİ YÖNTEMLERİNİ (yani .filter) KULLANMAYIN.
 */
 
-function ismeGoreFiltrele(/*kod buraya*/) {
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar, malzeme) {
+  const sevgililerPaketi = [];
+  for (let i = 0; i < tatlar.length; i++) {
+    if (tatlar[i].includes(malzeme)) {
+      sevgililerPaketi.push(tatlar[i]);
+    }
+  }
+  return sevgililerPaketi;
 }
+const sevgililerPaketi = ismeGoreFiltrele(orijinalTatlar, "Çikolata");
+console.log(sevgililerPaketi);
 
 /* ALIŞTIRMA */
 
