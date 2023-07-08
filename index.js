@@ -53,6 +53,7 @@ function kopyala(orjDizi) {
   return kopyaDizi;
 }
 console.log(kopyala(orijinalTatlar));
+console.log("------------------------------");
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
@@ -73,6 +74,8 @@ function dizi25Cesitmi(saydir) {
   /*kod buraya*/
 }
 console.log(dizi25Cesitmi(orijinalTatlar));
+console.log("------------------------------");
+
 /* Görev 3:
 Pastane sahibi size yeni bir lezzet fikriyle geldi: Kakule! Bunun da çok tutacağından çok emin. Bu lezzeti eklemek için diziyi değiştirmeniz gerekir.
 
@@ -85,9 +88,14 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
   Örneğin: cesitEkle(orijinalTatlar, "Kakule") işlevi doğru çalıştığında ["Kakule", "Muz",..."Vanilya"] şeklinde dönmelidir
 */
 
-function cesitEkle(/*kod buraya*/) {
-  /*kod buraya*/
+function cesitEkle(tatlar, yeniTad = "") {
+  tatlar.unshift(yeniTad);
+
+  return tatlar;
 }
+const yeniTatlar = cesitEkle(orijinalTatlar, "Kakule");
+console.log(yeniTatlar);
+console.log("------------------------------");
 
 /* Cörev 4:
 
@@ -101,9 +109,12 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
    Örneğin: sonCesitiKaldir(orijinalTatlar) çalıştırıldığında ["Kakule", "Muz",..."Çilek"] döndürülür.
 */
 
-function sonCesitiKaldir(/*kod buraya*/) {
-  /*kod buraya*/
+function sonCesitiKaldir(tatlar) {
+  tatlar.pop();
+  return tatlar;
 }
+const tatkaldirildi = sonCesitiKaldir(yeniTatlar);
+console.log(tatkaldirildi);
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -116,9 +127,12 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/) {
+function indekstekiCesitiGetir(tatlar, i) {
+  const istenenTad = tatlar[i];
+  return istenenTad;
   /*kod buraya*/
 }
+console.log(indekstekiCesitiGetir(orijinalTatlar, 2));
 
 /* Görev 6:
 
