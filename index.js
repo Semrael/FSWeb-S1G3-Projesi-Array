@@ -115,6 +115,7 @@ function sonCesitiKaldir(tatlar) {
 }
 const tatkaldirildi = sonCesitiKaldir(yeniTatlar);
 console.log(tatkaldirildi);
+console.log("------------------------------");
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -133,7 +134,7 @@ function indekstekiCesitiGetir(tatlar, i) {
   /*kod buraya*/
 }
 console.log(indekstekiCesitiGetir(orijinalTatlar, 2));
-
+console.log("------------------------------");
 /* Görev 6:
 
 Firma, ürün yelpazesine daha fazla lezzet eklemek istediğinden, sadece ilk veya son aromayı keyfi olarak çıkarmak yerine, aroma adına göre aromaları kaldırmaları gerektiğini fark ederler. Göreviniz, verilen bir dizinde, ada göre bu tadı diziden çıkarmak.
@@ -149,9 +150,20 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/) {
-  /*kod buraya*/
+// function ismeGoreCesitCikar(tatlar, silinecekUrun) {
+//   return tatlar.filter((tat) => tat !== silinecekUrun);
+// }
+
+function ismeGoreCesitCikar(tatlar, silinecekUrun) {
+  const urunBulundu = tatlar.indexOf(silinecekUrun);
+  if (urunBulundu !== -1) {
+    tatlar.splice(urunBulundu, 1);
+  }
+  return tatlar;
 }
+
+const cesitCikarıldı = ismeGoreCesitCikar(orijinalTatlar, "Tarçın");
+console.log(cesitCikarıldı);
 
 /* Görev 7:
 
